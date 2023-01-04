@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './App.css';
 import {data} from "./data";
-import {image} from "./myImg";
+
 
 function App() {
 
@@ -10,28 +10,27 @@ function App() {
     let newItem = place.filter(placeName => placeName.id !==id);
     setPlace(newItem)
   }
-  const[picture,setPicture]=useState(0);
-  const {nameImg,image}=image[picture];
-  const previousPicture=()=>{
-    setPicture((picture=>{
-      picture--;
-      if(picture<0){
-        return image.length-1;
-      }
-      return picture;
-    }))
-  }
-  const nextPicture=()=>{
-    setPicture((picture =>{
-      picture++;
-      if(picture>image.length-1){
-        picture=0;
-      }
-      return picture;
-    }))
-  }
-  return (
- <div>
+  // const[picture,setPicture]=useState(0);
+  // const {nameImg,image}=image[picture];
+  // const previousPicture=()=>{
+  //   setPicture((picture=>{
+  //     picture--;
+  //     if(picture<0){
+  //       return image.length-1;
+  //     }
+  //     return picture;
+  //   }))
+  // }
+  // const nextPicture=()=>{
+  //   setPicture((picture =>{
+  //     picture++;
+  //     if(picture>image.length-1){
+  //       picture=0;
+  //     }
+  //     return picture;
+  //   }))
+  
+  return ( 
 
     <div>
       <div className="container">
@@ -53,7 +52,7 @@ function App() {
             </div>
 
             <div className="container">
-            <img src={image} width="300px"/>
+            <img src={image} width="300px" alt="places"/>
             </div>
 
             <div className="container">
@@ -67,7 +66,7 @@ function App() {
         <button onClick={ () => setPlace([]) }> DELETE ALL </button>
       </div>
     </div>
-    <div>
+    /* <div>
       <div className="container">
         <img src={image} width="300px" alt="photo"/>
       </div>
@@ -78,9 +77,9 @@ function App() {
         <button onClick={previousPicture}>Previous</button>
         <button onClick={nextPicture}>Next</button>
       </div>
-    </div>
+    </div> */
 
-</div>
+
 
 )}
 
